@@ -1,6 +1,6 @@
 <div>
   <div align="right">
-    👆 右上角点击 <img class="ai-header-badge-img" src="https://img.shields.io/github/stars/UFund-Me/Qbot.svg?style=social&label=Star"> 告诉我，你希望这个项目继续加速开发迭代 ❤️ & ☕️
+    👆 右上角点击 <img class="ai-header-badge-img" src="r"> 告诉我，你希望这个项目继续加速开发迭代 ❤️ & ☕️
   </div>
   <h1> 🤖 Qbot </h1>
 </div>
@@ -65,11 +65,6 @@
 
 <div align="center">
   
-  🎺 <b>号外</b>：Qbot微信小程序开发招募 [UFund-miniprogram](https://github.com/UFund-Me/UFund-miniprogram)
-
-  <b>不建议 fork 项目，本项目会持续更新，只 fork 看不到更新，建议 Star ⭐️ ~</b>
-
-  <i>喜欢这个项目吗？请考虑[ ❤️赞助](#sponsors--support) 本项目，以帮助改进！</i>
 
 </div>
 
@@ -94,7 +89,7 @@ python main.py  #if run on Mac, please use 'pythonw main.py'
   <img width="" alt="demo" src="https://user-images.githubusercontent.com/29084184/223608757-5808e23c-86e4-4b1b-8b03-e04c8f368f5c.gif">
 </p>
 
-<details><summary>Mac系统在安装之前需要手动安装tables库的依赖hdf5，以及pythonw https://github.com/UFund-Me/Qbot/issues/11 </summary>
+<details><summary>Mac系统在安装之前需要手动安装tables库的依赖hdf5，以及pythonw  </summary>
 
 ```
 brew install hdf5
@@ -104,7 +99,7 @@ export BLOSC_DIR=/opt/homebrew/opt/c-blosc
 ```
 </details>
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/UFund-Me/Qbot)
+[![Open in Gitpod]
 
 <!-- ![Gitpod-Ready](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod) -->
 
@@ -207,9 +202,8 @@ pip install -r requirements.txt
 python main.py
 ```
 
-主要包含四个窗口，如果启动界面未显示或有问题可以参考下图中对应的启动方式。👉 点击[这里](gui/mainframe.py)查看源码，下文也有文字介绍。
+主要包含四个窗口，如果启动界面未显示或有问题可以参考下图中对应的启动方式。
 
-![image](https://github.com/UFund-Me/Qbot/assets/29084184/9f1dcc07-ca76-4600-a02c-76104fb28c51)
 
 #### 后端/服务端
 
@@ -225,7 +219,7 @@ go build
 
 2. 基金策略在线分析（对应于前端/客户端第四个菜单：基金投资策略分析）
 
-需要 node 开发环境: `npm`、`node`，点击[查看](pyfunds/fund-strategies/README.md)详细操作文档
+需要 node 开发环境: `npm`、`node`，
 
 <details><summary>版本信息（作为参考）</summary>
 
@@ -401,7 +395,7 @@ dagit -h 0.0.0.0 -p 3000
 
 ### Benchmark and Model zoo
 
-Results and models are available in the [model zoo](docs/03-智能策略/model_zoo.md). AI strategies is shown at [here](./pytrader/strategies/), local run ``python pytrader/strategies/workflow_by_code.py``, also provide [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UFund-Me/Qbot/blob/main/pytrader/strategies/workflow_by_code.ipynb/HEAD)
+
 
 <details><summary><em><b>👉 点击展开查看具体AI模型benchmark结果</b></em></summary>
 
@@ -451,170 +445,4 @@ Results and models are available in the [model zoo](docs/03-智能策略/model_z
 - 参与本代码仓库程序设计与实现，多提交PR合并后可免费加入知识星球；
 - 贡献榜单前10名可获得一年免费使用权，前3名可获得qbot进阶版终身免费使用权；
 
-## 策略原理及源码分析
-
-本项目编写了详细的策略原理说明和平台搭建到使用的详细文档，尤其适合量化小白。欢迎加群交流！
-
-[在线文档](https://ufund-me.github.io/Qbot/#/) | [❓ 常见问题](https://ufund-me.github.io/Qbot/#/04-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/FQA) | [Jupyter Notebook](./pytrader/strategies/notebook)
-
-## Quantstats Report
-
-![Quantstats Report](https://user-images.githubusercontent.com/29084184/207054856-44d1815b-f92f-40a7-b82e-e4a6b3960f2f.png)
-
-Click [HERE](quantstats#visualize-stock-performance) to more detail.
-
-### Some strategy backtest results:
-
-> 声明：别轻易用于实盘，市场有风险，投资需谨慎。
-
-```
-symbol：华正新材(603186)
-Starting Portfolio Value: 10000.00
-Startdate=datetime.datetime(2010, 1, 1),
-Enddate=datetime.datetime(2020, 4, 21),
-# 设置佣金为0.001, 除以100去掉%号
-cerebro.broker.setcommission(commission=0.001)
-```
-    
-A股回测MACD策略:
-
-![MACD](pytrader/doc/02.easy_macd_strategy/Figure_macd.png)
-
-![image](https://github.com/UFund-Me/Qbot/assets/29084184/dfef65ba-0d32-4f5f-b413-d6ec02fc700e)
-
-👉 点击[查看](pytrader/doc/02.easy_macd_strategy/macd.py)源码
-
-A股回测KDJ策略:
-
-![KDJ](pytrader/doc/04.kdj_with_macd/Figure_kdj.png)
-    
-![image](https://github.com/UFund-Me/Qbot/assets/29084184/ef8e945b-59d6-4220-87e3-08ec1196cc2c)
-
-👉 点击[查看](pytrader/doc/04.kdj_with_macd/kdj.py)源码
-
-A股回测 KDJ+MACD 策略:
-
-![KDJ with MACD](pytrader/doc/04.kdj_with_macd/Figure_kdj_with_macd.png)
-
-![image](https://github.com/UFund-Me/Qbot/assets/29084184/67338ec5-a6b1-4aa7-9792-1a2c61f353da)
-
-👉 点击[查看](pytrader/doc/04.kdj_with_macd/kdj_macd.py)源码
-
-## TODO
-
-👆 右上角点击 <img class="ai-header-badge-img" src="https://img.shields.io/github/stars/UFund-Me/Qbot.svg?style=social&label=Star"> 告诉我，你希望这个项目继续加速开发迭代[ ❤️ & ☕️](https://github.com/sponsors/Charmve)
-
-- [x] 把策略回测整合在一个上位机中，包括：选基、选股策略、交易策略，模拟交易，实盘交易
-- [ ] 很多策略需要做回测验证；
-- [ ] 本项目由前后端支持，有上位机app支持，但目前框架还比较乱，需要做调整；
-- [ ] 各种策略需要抽象设计，支持统一调用；
-- [ ] 增强数据获取的实时性，每秒数据，降低延迟；
-- [ ] 在线文档的完善，目前主要几个部分：新手使用指引、经典策略原理和源码、智能策略原理和源码、常见问题等；
-- [ ] 新的feature开发，欢迎在[issues](https://github.com/UFund-Me/Qbot/issues/)交流；
-
-## Contributing
-
-We appreciate all contributions to improve Qbot. Please refer to [CONTRIBUTING.md](.github/CONTRIBUTING.md) for the contributing guideline.
-
-## 🍮 Community
-- Github <a href="https://github.com/UFund-Me/Qbot/discussions" target="_blank">discussions 💬</a> or <a href="https://github.com/UFund-Me/Qbot/issues" target="_blank">issues 💭</a>
-
-- 微信: Yida_Zhang2
-- Email: yidazhang1#gmail.com 
-- 知乎：[@Charmve](https://www.zhihu.com/people/MaiweiE-com)
-
-<br>
-
-- 知识星球：AI量化投研实验室 （加我微信，邀请）
-
-<br>
-
-<table class="table table-striped table-bordered table-vcenter">
-    <tbody class=ai-notebooks-table-content>
-    <tr>
-        <td>
-            <div class="mdl-cell mdl-cell--4-col">
-                <a href="https://github.com/UFund-Me/.github/assets/29084184/c8782e38-be7d-4839-bad0-6736bfb9ab9e"><img class="illustration_img" width="320" alt="添加个人微信" src="https://raw.githubusercontent.com/UFund-Me/Qbot/main/gui/imgs/wechat.png"></img></a> <br>个人微信
-            </div>
-        </td>
-        <td>
-            <div class="mdl-cell mdl-cell--4-col">
-                <a href="https://github.com/UFund-Me/.github/assets/29084184/712a460f-a264-4f16-a7b8-c990106ec624"><img class="illustration_img" width="318" alt="加入微信交流群" src="https://github.com/UFund-Me/Qbot/assets/29084184/c81a0983-b5c4-43b5-acb5-3bd98010f7e3"/></a> <br>Qbot用户微信交流群
-            </div>
-        </td>
-        <td>
-            <div class="mdl-cell mdl-cell--4-col">
-                <a href="https://github.com/UFund-Me/.github/assets/29084184/9d3983ff-ece8-4f99-8579-94234987dcf2"><img class="illustration_img" height="320" alt="加入知识星球（付费）" src="https://raw.githubusercontent.com/UFund-Me/Qbot/main/gui/imgs/zsxq.png"/></a> <br> <sup>AI量化交易策略分享、实盘交易教程、实时数据接口</sup> <br>知识星球（付费）
-            </div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-
-若二维码因 Github 网络无法打开，请点击[二维码](https://charmve.github.io/img/contact-card.png)直接打开图片。
-
-<br>
-
-<table align="center"><tbody>
-  <tr>
-    <td colspan="2" rowspan="1">
-      <h4>🎉 本项目刚上线就收到了两次GitHub官方趋势榜Top5、Top1好成绩! </h4>
-      <p>现对于转发本项目到朋友圈或100人以上微信群等，可获得<b>知识星球价值20元的 🎫优惠券 一张</b>, 限时10张。</p>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="1" rowspan="5" class="ai-notebooks-table-points ai-orange-link">
-        <div align="center">
-            <a href="https://github.com/UFund-Me/Qbot" target="_blank"><img src="https://img.shields.io/badge/-💮 %20Qbot-red.svg" alt="Qbot" title="Qbot"></a>&nbsp;
-            <a class="https://github.com/UFund-Me/Qbot">
-              <img class="ai-header-badge-img" src="https://img.shields.io/github/stars/UFund-Me/Qbot.svg?style=social&label=Star">
-            </a>&nbsp;
-            <a href="https://raw.githubusercontent.com/UFund-Me/Qbot/main/gui/imgs/wechat.png" target="_blank"><img src="https://img.shields.io/badge/-WeChat-lightgreen.svg?logo=WeChat"></a>
-            <p>🔥Among the <a href="https://github.com/topics/quant-trade" target="_blank">top 10</a> Quant &amp; Trade repos on GitHub</p>
-        </div>
-        <ul> 主要包含两部分：在本项目的基础下，
-            <li>增加更多策略研究，包含回测源码（请先学会有本项目中的策略库）；</li>
-            <li>增加实盘接入方式的源代码；</li>
-            <li>策略交流，AI投研实验室MeetUp线上/线下活动（对于基础薄弱的同学，欢迎进微信群答疑）</li>
-            <li>最近较为受欢迎的一个福利点：AI选股推荐列表邮件订阅，这有个样例 https://github.com/UFund-Me/Qbot/issues/37</li>
-        </ul>
-      </td>
-      <td>
-        <img align="center" src="https://github.com/UFund-Me/Qbot/assets/29084184/bb5ec619-887a-4ba7-a9d7-9e8b083bbb1a" height="320" alt="知识星球优惠券">
-      </td>
-</tr></tbody></table>
-
-<br>
-
-## :warning: Disclaimer
-
-👨‍🏫 **重点重点！** 交易策略和自动化工具只是提供便利，并不代表实际交易收益。该项目任何内容不构成任何投资建议。市场有风险，投资需谨慎。
-
-## 🔥 Stargazers Over Time
-	
-<!-- [![Stargazers over time](https://starchart.cc/UFund-Me/Qbot.svg)](https://starchart.cc/UFund-Me/Qbot) -->
-
-[![Star History Chart](https://api.star-history.com/svg?repos=UFund-Me/Qbot,ailabx/ailabx,jadepeng/pytrader&type=Timeline)](https://star-history.com/#UFund-Me/Qbot&ailabx/ailabx&jadepeng/pytrader&Timeline)
-    
-## Sponsors & support
-
-If you like the project, you can become a sponsor at [Open Collective](https://opencollective.com/qbot) or use [GitHub Sponsors](https://github.com/sponsors/Charmve).
-
-<b>Thank you for supporting Qbot!</b>
-
-<a href="https://opencollective.com/qbot" target="_blank"><img src="https://opencollective.com/Qbot/tiers/sponsors.svg?avatarHeight=120" alt="Sponsor"></a>
-<a href="https://opencollective.com/qbot#category-CONTRIBUTE" target="_blank"><img src="https://opencollective.com/qbot/tiers/backers.svg?avatarHeight=100"/></a>
-
-<a href=""><img align="left" alt="Go for it!" src="https://raw.githubusercontent.com/Charmve/computer-vision-in-action/main/res/ui/frontpage/2020-sponsors.svg" height="68" title="Do what you like, and do it best!"/></a>
-
-## ♥️ Acknowledgements
-
-<b>Last but not least, we're thankful to these open-source repo for sharing their services for free:</b>
-
-基于 backtrader、[vnpy](https://github.com/vnpy/vnpy)、[qlib](https://github.com/microsoft/qlib)、tushare、easyquant、[fund-strategies](https://github.com/SunshowerC/fund-strategy)、[investool](https://github.com/axiaoxin-com/investool) 等开源项目，感谢开发者。
-
-<br><br>
-
-感谢大家的支持与喜欢！
-
-Code with ❤️ & ☕️ @Charmve 2022-2023
+.....................................
